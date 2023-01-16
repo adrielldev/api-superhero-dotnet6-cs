@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kU+DTK4Igk61hiJ8KyvV/1bd0jbM/doJ+ok7r9Z4lX8=",
+  "Source": "api-superhero-dotnet6-cs",
+  "BasePath": "_content/api-superhero-dotnet6-cs",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
