@@ -8,10 +8,7 @@ namespace api_superhero_dotnet6_cs.Controllers
 
     public class SuperHeroController : ControllerBase
     {
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            var heroes = new List<SuperHero>
+         private static List<SuperHero> heroes = new List<SuperHero>
             {
                 new SuperHero {
                     Id = 1,
@@ -21,6 +18,17 @@ namespace api_superhero_dotnet6_cs.Controllers
                     Place="New York City"
                     }
             };
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+           
+            return Ok(heroes);
+        }
+
+        [HttpPost]
+       public async Task<IActionResult> AddHero([FromBody]SuperHero hero)
+        {
+            heroes.Add(hero);
             return Ok(heroes);
         }
     }
