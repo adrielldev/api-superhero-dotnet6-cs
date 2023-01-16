@@ -16,13 +16,29 @@ namespace api_superhero_dotnet6_cs.Controllers
                     FirstName="Peter",
                     LastName="Parker",
                     Place="New York City"
+                    },
+                    new SuperHero {
+                    Id = 2,
+                    Name="Iron Man",
+                    FirstName="Tony",
+                    LastName="Stark",
+                    Place="Long Island"
                     }
+
             };
         [HttpGet]
         public async Task<IActionResult> Get()
         {
            
             return Ok(heroes);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id )
+        {
+           var hero = heroes.Find(h=>h.Id ==id);
+            if(hero == null) return BadRequest("Hero not found");
+            return Ok(hero);
         }
 
         [HttpPost]
