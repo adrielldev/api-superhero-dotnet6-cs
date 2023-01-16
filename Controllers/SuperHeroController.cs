@@ -60,5 +60,15 @@ namespace api_superhero_dotnet6_cs.Controllers
             hero.Place = request.Place;
             return Ok(heroes);
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var hero = heroes.Find(h=>h.Id == id);
+            if (hero == null) 
+                return BadRequest("Hero not found");
+            
+            heroes.Remove(hero);
+            return Ok(hero);
+        }
     }
 } 
