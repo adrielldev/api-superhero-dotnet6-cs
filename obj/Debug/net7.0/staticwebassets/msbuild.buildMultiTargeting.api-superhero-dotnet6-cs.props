@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/api-superhero-dotnet6-cs.props" />
-</Project>
